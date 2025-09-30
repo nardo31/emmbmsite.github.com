@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    scrollbar-width: thin;
+    scrollbar-color: #570000 #111;
+}
+
+body {
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    opacity: 0.9;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-logo {
+    width: 80px;
+    height: auto;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.button {
+    border: none;
+    background: none;
+    color: #E0E0E0;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    padding: 5px 10px;
+}
+
+.button:hover {
+    color: #570000;
+}
+
+.main-content {
+    width: 100%;
+}
+
+.home-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.home-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.fon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(40%);
+}
+
+.home-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+}
+
+.home-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.home-text {
+    max-width: 400px;
+    width: 90%;
+    opacity: 0;
+    transform: translateY(18px);
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+}
+
+.home-text-two {
+    max-width: 300px;
+    width: 80%;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.8s ease-out 1.2s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gradient-section {
+    width: 100%;
+    background: #000;
+}
+
+.grd {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+}
+
+.about-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.fon2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(30%);
+}
+
+.about-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.about-content {
+    width: 100%;
+}
+
+.about-title {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto 60px;
+    display: block;
+}
+
+.about-text-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.text-column {
+    flex: 1;
+    min-width: 300px;
+    color: #fff;
+}
+
+.image-column {
+    flex: 0 0 auto;
+}
+
+.hist, .hist2, .hist3 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.txt {
+    font-weight: 600;
+    color: #700000;
+}
+
+.nardo-container {
+    position: relative;
+    max-width: 400px;
+}
+
+.nardo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.nardo-text {
+    position: absolute;
+    bottom: -20px;
+    right: -30px;
+    max-width: 150px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .nav {
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .button {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+    
+    .home-text {
+        max-width: 300px;
+    }
+    
+    .home-text-two {
+        max-width: 250px;
+    }
+    
+    .about-text-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .text-column {
+        order: 2;
+    }
+    
+    .image-column {
+        order: 1;
+    }
+    
+    .nardo-text {
+        position: static;
+        margin-top: 10px;
+        max-width: 120px;
+    }
+    
+    .about-container {
+        padding: 60px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        gap: 5px;
+    }
+    
+    .button {
+        font-size: 11px;
+        padding: 4px 6px;
+    }
+    
+    .logo-logo {
+        width: 60px;
+    }
+    
+    .home-text {
+        max-width: 250px;
+    }
+    
+    .home-text-two {
+        max-width: 200px;
+    }
+    
+    .hist, .hist2, .hist3 {
+        font-size: 16px;
+    }
+}
