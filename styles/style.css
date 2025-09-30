@@ -7,6 +7,10 @@
     scrollbar-color: #570000 #111;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #000;
     overflow-x: hidden;
