@@ -124,7 +124,7 @@ body {
     gap: 15px;
 }
 
-.product-item, .price-item {
+.product-item, .price-item, .color-item {
     display: flex;
     align-items: center;
 }
@@ -138,14 +138,35 @@ body {
     max-width: 30%;
 }
 
+.clr {
+    max-width: 67%;
+    height: auto;
+}
+
+.clr2 {
+    max-width: 100%;
+    height: auto;
+}
+
 .buy-button {
     background: none;
     border: none;
     padding: 0;
+    margin-top: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 50px;
     max-width: 200px;
+    display: inline-block;
+}
+
+.clr-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: 300px;
     display: inline-block;
 }
 
