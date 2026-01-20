@@ -288,14 +288,14 @@ body {
     }
     
     .logo-logo {
-        width: 60px;
+        width: 45px;
     }
     
     .nav {
         gap: 8px;
         justify-content: center;
         flex-wrap: nowrap;
-        overflow-x: auto;
+        overflow-x: hidden;
         padding: 5px 0;
     }
     
