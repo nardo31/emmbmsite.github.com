@@ -14,6 +14,7 @@ html {
 body {
     background-color: #000;
     overflow-x: hidden;
+    max-width: 100vw; /* Добавлено для предотвращения горизонтального скролла */
 }
 
 .header {
@@ -31,6 +32,7 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%; /* Добавлено */
 }
 
 .logo-logo {
@@ -101,6 +103,7 @@ body {
     padding: 20px 20px;
     border-radius: 8px;
     background-color: rgba(87, 0, 0, 0.2);
+    width: 100%; /* Добавлено */
 }
 
 .content-wrapper {
@@ -114,6 +117,7 @@ body {
     width: 300px;
     height: auto;
     border-radius: 8px;
+    max-width: 100%; /* Добавлено */
 }
 
 .text-content {
@@ -224,14 +228,22 @@ body {
         gap: 12px;
         justify-content: center;
         width: 100%;
+        flex-wrap: nowrap; /* Изменено с wrap на nowrap */
+        overflow-x: auto; /* Добавлено для горизонтальной прокрутки внутри навигации */
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 5px; /* Добавлено */
+    }
+    
+    .nav::-webkit-scrollbar {
+        display: none; /* Скрываем скроллбар на мобильных */
     }
     
     .button {
         font-size: 13px;
         padding: 6px 10px;
-        flex: 1;
+        flex: 0 0 auto; /* Изменено с flex: 1 */
         text-align: center;
-        max-width: 120px;
+        min-width: 120px; /* Изменено с max-width на min-width */
     }
     
     .home-section {
@@ -281,16 +293,26 @@ body {
         padding: 10px 0;
     }
     
+    .header-container {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 10px;
+    }
+    
     .logo-logo {
         width: 45px;
     }
     
     .nav {
         gap: 8px;
-        justify-content: center;
+        justify-content: flex-start; /* Изменено с center на flex-start */
         flex-wrap: nowrap;
-        overflow-x: hidden;
-        padding: 5px 0;
+        overflow-x: auto; /* Горизонтальная прокрутка внутри навигации */
+        -webkit-overflow-scrolling: touch;
+        padding: 5px 0 10px;
+        width: calc(100vw - 20px); /* Ограничиваем ширину для предотвращения скролла */
+        margin-left: -5px; /* Компенсируем padding */
+        margin-right: -5px; /* Компенсируем padding */
     }
     
     .button {
@@ -298,10 +320,18 @@ body {
         padding: 5px 8px;
         min-width: 80px;
         white-space: nowrap;
+        flex: 0 0 auto; /* Фиксируем размер кнопок */
     }
     
     .home-section {
         padding: 110px 0 30px;
+    }
+    
+    .home-block {
+        padding: 15px;
+        margin: 0 15px;
+        width: calc(100% - 30px); /* Фиксируем ширину блока */
+        box-sizing: border-box; /* Уже есть в *, но для надежности */
     }
     
     .home-img {
@@ -328,27 +358,6 @@ body {
         margin-top: 25px;
         max-width: 160px;
     }
-        .home-block {
-        width: calc(100% - 30px);
-        margin: 0 auto;
-    }
-    
-    .nav {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 5px;
-        justify-content: flex-start;
-    }
-    
-    .nav::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .header-container {
-        overflow: hidden;
-    }
 }
 
 /* Очень маленькие экраны */
@@ -364,6 +373,9 @@ body {
     
     .nav {
         gap: 5px;
+        width: calc(100vw - 16px); /* Ограничиваем ширину */
+        margin-left: -4px;
+        margin-right: -4px;
     }
     
     .button {
@@ -375,6 +387,7 @@ body {
     .home-block {
         padding: 12px;
         margin: 0 10px;
+        width: calc(100% - 20px); /* Фиксируем ширину блока */
     }
     
     .home-img {
@@ -395,6 +408,7 @@ body {
     .header-container {
         flex-direction: row;
         gap: 10px;
+        padding: 0 15px;
     }
     
     .logo-logo {
@@ -403,11 +417,15 @@ body {
     
     .nav {
         gap: 8px;
+        flex-wrap: nowrap;
+        overflow-x: auto; /* Горизонтальная прокрутка внутри навигации */
+        -webkit-overflow-scrolling: touch;
     }
     
     .button {
         font-size: 12px;
         padding: 4px 8px;
+        flex: 0 0 auto;
     }
     
     .home-section {
@@ -427,39 +445,3 @@ body {
         margin-top: 20px;
     }
 }
-
-@media (max-width: 768px) {
-    body {
-        max-width: 100vw;
-        overflow-x: hidden;
-    }
-    
-    .home-block {
-        width: calc(100% - 40px);
-        margin: 0 auto;
-        padding: 15px;
-    }
-    
-    .futb, .pric, .clr, .clr2, .buy {
-        max-width: 100%;
-        height: auto;
-    }
-    
-    .product-item, .price-item, .color-item {
-        width: 100%;
-        overflow: hidden;
-    }
-    
-    .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-        padding: 0 5px;
-    }
-    
-    .button {
-        flex: 0 1 auto;
-        min-width: unset;
-    }
-}
-
