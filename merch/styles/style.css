@@ -14,7 +14,8 @@ html {
 body {
     background-color: #000;
     overflow-x: hidden;
-    max-width: 100vw; /* Добавлено для предотвращения горизонтального скролла */
+    width: 100%;
+    max-width: 100%;
 }
 
 .header {
@@ -24,6 +25,8 @@ body {
     width: 100%;
     z-index: 1000;
     opacity: 0.9;
+    left: 0;
+    right: 0;
 }
 
 .header-container {
@@ -32,12 +35,14 @@ body {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    width: 100%; /* Добавлено */
+    width: 100%;
+    padding: 0 15px; /* Добавлено */
 }
 
 .logo-logo {
     width: 80px;
     height: auto;
+    max-width: 100%; /* Добавлено */
 }
 
 .nav {
@@ -55,6 +60,7 @@ body {
     cursor: pointer;
     transition: all 0.5s ease;
     padding: 5px 10px;
+    white-space: nowrap; /* Добавлено */
 }
 
 .button:hover {
@@ -63,6 +69,7 @@ body {
 
 .main-content {
     width: 100%;
+    overflow: hidden; /* Добавлено */
 }
 
 .home-section {
@@ -93,17 +100,19 @@ body {
 
 .home-content {
     width: 100%;
-    padding: 20px 0;
+    padding: 20px 15px; /* Изменено с 0 на 15px */
     z-index: 4;
+    box-sizing: border-box; /* Добавлено */
 }
 
 .home-block {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 20px;
+    padding: 20px;
     border-radius: 8px;
     background-color: rgba(87, 0, 0, 0.2);
-    width: 100%; /* Добавлено */
+    width: 100%;
+    box-sizing: border-box; /* Добавлено */
 }
 
 .content-wrapper {
@@ -117,12 +126,12 @@ body {
     width: 300px;
     height: auto;
     border-radius: 8px;
-    max-width: 100%; /* Добавлено */
+    max-width: 100%;
 }
 
 .text-content {
     flex: 1;
-    min-width: 250px;
+    min-width: 0; /* Изменено с 250px на 0 */
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -136,20 +145,24 @@ body {
 .futb {
     max-width: 100%;
     height: auto;
+    width: 100%; /* Добавлено */
 }
 
 .pric {
     max-width: 30%;
+    width: 100%; /* Добавлено */
 }
 
 .clr {
     max-width: 67%;
     height: auto;
+    width: 100%; /* Добавлено */
 }
 
 .clr2 {
     max-width: 100%;
     height: auto;
+    width: 100%; /* Добавлено */
 }
 
 .buy-button {
@@ -161,6 +174,7 @@ body {
     transition: all 0.3s ease;
     max-width: 200px;
     display: inline-block;
+    width: 100%; /* Добавлено */
 }
 
 .clr-button {
@@ -172,6 +186,7 @@ body {
     transition: all 0.3s ease;
     max-width: 300px;
     display: inline-block;
+    width: 100%; /* Добавлено */
 }
 
 .buy-button:hover {
@@ -196,7 +211,13 @@ body {
     }
     
     .home-block {
-        margin: 0 20px;
+        margin: 0 auto;
+        padding: 20px;
+        width: calc(100% - 40px); /* Добавлено */
+    }
+    
+    .home-content {
+        padding: 20px 0;
     }
     
     .content-wrapper {
@@ -226,24 +247,25 @@ body {
     
     .nav {
         gap: 12px;
-        justify-content: center;
+        justify-content: flex-start; /* Изменено */
         width: 100%;
-        flex-wrap: nowrap; /* Изменено с wrap на nowrap */
-        overflow-x: auto; /* Добавлено для горизонтальной прокрутки внутри навигации */
+        flex-wrap: nowrap;
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        padding-bottom: 5px; /* Добавлено */
+        padding-bottom: 10px;
+        margin: 0 -15px;
+        padding: 0 15px 10px;
     }
     
     .nav::-webkit-scrollbar {
-        display: none; /* Скрываем скроллбар на мобильных */
+        display: none;
     }
     
     .button {
         font-size: 13px;
-        padding: 6px 10px;
-        flex: 0 0 auto; /* Изменено с flex: 1 */
+        padding: 6px 12px;
+        flex: 0 0 auto;
         text-align: center;
-        min-width: 120px; /* Изменено с max-width на min-width */
     }
     
     .home-section {
@@ -256,6 +278,7 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        width: 100%;
     }
     
     .home-img {
@@ -266,10 +289,12 @@ body {
     .text-content {
         width: 100%;
         text-align: center;
+        min-width: 0;
     }
     
     .product-item, .price-item {
         justify-content: center;
+        width: 100%;
     }
     
     .futb {
@@ -285,18 +310,38 @@ body {
         max-width: 180px;
         align-self: center;
     }
+    
+    .home-content {
+        padding: 20px 15px;
+    }
+    
+    .home-block {
+        padding: 20px;
+        width: 100%;
+        margin: 0;
+    }
 }
 
 /* Мобильные телефоны */
 @media (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+        position: relative;
+    }
+    
     .header {
         padding: 10px 0;
+        width: 100vw;
+        left: 0;
+        right: 0;
     }
     
     .header-container {
         flex-direction: column;
         gap: 12px;
         padding: 0 10px;
+        width: 100vw;
+        max-width: 100vw;
     }
     
     .logo-logo {
@@ -305,45 +350,57 @@ body {
     
     .nav {
         gap: 8px;
-        justify-content: flex-start; /* Изменено с center на flex-start */
+        justify-content: flex-start;
         flex-wrap: nowrap;
-        overflow-x: auto; /* Горизонтальная прокрутка внутри навигации */
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-        padding: 5px 0 10px;
-        width: calc(100vw - 20px); /* Ограничиваем ширину для предотвращения скролла */
-        margin-left: -5px; /* Компенсируем padding */
-        margin-right: -5px; /* Компенсируем padding */
+        padding: 0 10px 10px;
+        margin: 0 -10px;
+        width: 100vw;
     }
     
     .button {
         font-size: 12px;
-        padding: 5px 8px;
+        padding: 5px 10px;
         min-width: 80px;
         white-space: nowrap;
-        flex: 0 0 auto; /* Фиксируем размер кнопок */
+        flex: 0 0 auto;
     }
     
     .home-section {
         padding: 110px 0 30px;
+        width: 100vw;
+        overflow: hidden;
     }
     
     .home-block {
         padding: 15px;
-        margin: 0 15px;
-        width: calc(100% - 30px); /* Фиксируем ширину блока */
-        box-sizing: border-box; /* Уже есть в *, но для надежности */
+        margin: 0;
+        width: 100vw;
+        max-width: 100vw;
+        border-radius: 0;
+    }
+    
+    .home-content {
+        padding: 0;
+        width: 100vw;
+        max-width: 100vw;
     }
     
     .home-img {
         width: 200px;
+        max-width: 80vw;
     }
     
     .content-wrapper {
         gap: 15px;
+        width: 100%;
     }
     
     .text-content {
         gap: 12px;
+        width: 100%;
+        padding: 0 5px;
     }
     
     .futb {
@@ -357,6 +414,17 @@ body {
     .buy-button {
         margin-top: 25px;
         max-width: 160px;
+    }
+    
+    .product-item, .price-item, .color-item {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .product-item img,
+    .price-item img,
+    .color-item img {
+        max-width: 100%;
     }
 }
 
@@ -373,29 +441,35 @@ body {
     
     .nav {
         gap: 5px;
-        width: calc(100vw - 16px); /* Ограничиваем ширину */
-        margin-left: -4px;
-        margin-right: -4px;
+        padding: 0 8px 8px;
+        margin: 0 -8px;
     }
     
     .button {
         font-size: 11px;
-        padding: 4px 6px;
+        padding: 4px 8px;
         min-width: 70px;
     }
     
     .home-block {
         padding: 12px;
-        margin: 0 10px;
-        width: calc(100% - 20px); /* Фиксируем ширину блока */
     }
     
     .home-img {
         width: 180px;
+        max-width: 85vw;
     }
     
     .buy-button {
         max-width: 140px;
+    }
+    
+    .futb {
+        max-width: 70%;
+    }
+    
+    .pric {
+        max-width: 45%;
     }
 }
 
@@ -418,8 +492,9 @@ body {
     .nav {
         gap: 8px;
         flex-wrap: nowrap;
-        overflow-x: auto; /* Горизонтальная прокрутка внутри навигации */
+        overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        padding-bottom: 5px;
     }
     
     .button {
@@ -444,4 +519,10 @@ body {
     .buy-button {
         margin-top: 20px;
     }
+}
+
+/* Фикс для всех изображений */
+img {
+    max-width: 100%;
+    height: auto;
 }
