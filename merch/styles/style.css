@@ -281,12 +281,6 @@ body {
         padding: 10px 0;
     }
     
-    .header-container {
-        flex-direction: column;
-        gap: 12px;
-        padding: 0 10px;
-    }
-    
     .logo-logo {
         width: 45px;
     }
@@ -308,11 +302,6 @@ body {
     
     .home-section {
         padding: 110px 0 30px;
-    }
-    
-    .home-block {
-        padding: 15px;
-        margin: 0 15px;
     }
     
     .home-img {
@@ -338,6 +327,27 @@ body {
     .buy-button {
         margin-top: 25px;
         max-width: 160px;
+    }
+        .home-block {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+    }
+    
+    .nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 5px;
+        justify-content: flex-start;
+    }
+    
+    .nav::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .header-container {
+        overflow: hidden;
     }
 }
 
@@ -453,36 +463,3 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    .home-block {
-        width: calc(100% - 30px);
-        margin: 0 auto;
-    }
-    
-    .nav {
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 5px;
-        justify-content: flex-start;
-    }
-    
-    .nav::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .header-container {
-        overflow: hidden;
-    }
-}
-
-@media (max-width: 320px) {
-    .home-block {
-        width: calc(100% - 20px);
-    }
-    
-    .nav {
-        padding: 0 2px;
-    }
-}
