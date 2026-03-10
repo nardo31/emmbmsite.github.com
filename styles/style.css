@@ -342,7 +342,27 @@ body {
 
 
 
-/* Только мобильные устройства */
+/* Планшеты и небольшие ноутбуки */
+@media (max-width: 992px) {
+    .home-block {
+        margin-top: 80px;
+    }
+    
+    .home-text {
+        max-width: 350px;
+    }
+    
+    .home-text-two {
+        max-width: 300px;
+    }
+    
+    .about-title,
+    .music-title {
+        max-width: 400px;
+    }
+}
+
+/* Мобильные устройства */
 @media (max-width: 768px) {
     .header {
         padding: 10px 0;
@@ -370,25 +390,118 @@ body {
     }
     
     .home-section {
-        min-height: 500px;
-        height: 70vh;
+        min-height: 600px;
+        height: 100vh;
+        padding-top: 80px;
+        display: flex;
+        align-items: center;
     }
     
     .home-content {
-        padding: 0 15px;
+        padding: 0 20px;
+        width: 100%;
     }
     
     .home-block {
-        margin-top: 200px;
-        gap: 15px;
+        margin-top: 0;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .home-text {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .home-text-two {
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .about-container,
+    .music-container {
+        padding: 60px 20px;
+    }
+    
+    .about-title,
+    .music-title {
+        margin-bottom: 40px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    
+    .about-text-content,
+    .music-text-content {
+        gap: 30px;
+        flex-direction: column;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .text-column,
+    .text-column-2 {
+        min-width: 100%;
+        text-align: left;
+    }
+    
+    .hist, .hist2, .hist3,
+    .mus1, .mus2, .mus3, .list-mus9,
+    .list-mus1, .list-mus2, .list-mus3, .list-mus4, 
+    .list-mus5, .list-mus6, .list-mus7, .list-mus8 {
+        font-size: 17px;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    
+    .nardo-container,
+    .sol-container {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .nardo-text {
+        position: static;
+        max-width: 150px;
+        margin-top: 10px;
+        margin-left: auto;
+        text-align: right;
+    }
+}
+
+/* Маленькие мобильные устройства */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 15px;
+    }
+    
+    .logo-logo {
+        width: 45px;
+    }
+    
+    .nav {
+        gap: 5px;
+    }
+    
+    .button {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    
+    .home-section {
+        min-height: 550px;
     }
     
     .home-text {
         max-width: 300px;
+        font-size: 28px;
     }
     
     .home-text-two {
         max-width: 250px;
+        font-size: 16px;
     }
     
     .about-container,
@@ -398,19 +511,9 @@ body {
     
     .about-title,
     .music-title {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         max-width: 300px;
-    }
-    
-    .about-text-content,
-    .music-text-content {
-        gap: 30px;
-        flex-direction: column;
-    }
-    
-    .text-column,
-    .text-column-2 {
-        min-width: 100%;
+        font-size: 28px;
     }
     
     .hist, .hist2, .hist3,
@@ -418,64 +521,44 @@ body {
     .list-mus1, .list-mus2, .list-mus3, .list-mus4, 
     .list-mus5, .list-mus6, .list-mus7, .list-mus8 {
         font-size: 16px;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
     }
     
     .nardo-container,
     .sol-container {
-        max-width: 300px;
-        margin: 0 auto;
+        max-width: 280px;
     }
     
     .nardo-text {
-        position: static;
-        max-width: 120px;
-        margin-top: 10px;
-        margin-left: auto;
+        max-width: 130px;
+        font-size: 14px;
     }
 }
 
-/* Маленькие мобильные устройства */
-@media (max-width: 480px) {
-    .header-container {
-        padding: 0 10px;
+/* Очень маленькие устройства */
+@media (max-width: 360px) {
+    .button {
+        font-size: 12px;
+        padding: 5px 8px;
     }
     
     .logo-logo {
-        width: 50px;
-    }
-    
-    .nav {
-        gap: 8px;
-    }
-    
-    .button {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
-    
-    .home-section {
-        min-height: 450px;
-        height: 65vh;
+        width: 40px;
     }
     
     .home-text {
-        max-width: 250px;
+        max-width: 260px;
+        font-size: 24px;
     }
     
     .home-text-two {
-        max-width: 200px;
-    }
-    
-    .about-container,
-    .music-container {
-        padding: 40px 10px;
+        max-width: 220px;
+        font-size: 14px;
     }
     
     .about-title,
     .music-title {
-        margin-bottom: 30px;
-        max-width: 250px;
+        font-size: 24px;
     }
     
     .hist, .hist2, .hist3,
@@ -483,31 +566,67 @@ body {
     .list-mus1, .list-mus2, .list-mus3, .list-mus4, 
     .list-mus5, .list-mus6, .list-mus7, .list-mus8 {
         font-size: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .nardo-container,
-    .sol-container {
-        max-width: 250px;
     }
 }
 
 /* Ландшафтная ориентация на мобильных */
-@media (max-width: 768px) and (orientation: landscape) {
-    .home-section {
-        height: 100vh;
-        min-height: 400px;
-    }
-    
+@media (max-width: 896px) and (orientation: landscape) {
     .header {
-        padding: 5px 0;
+        padding: 8px 0;
     }
     
     .logo-logo {
-        width: 45px;
+        width: 40px;
+    }
+    
+    .home-section {
+        height: auto;
+        min-height: 400px;
+        padding: 100px 0 60px;
     }
     
     .home-block {
-        gap: 10px;
+        gap: 15px;
+    }
+    
+    .home-text {
+        max-width: 350px;
+        font-size: 26px;
+    }
+    
+    .home-text-two {
+        max-width: 300px;
+    }
+    
+    .about-container,
+    .music-container {
+        padding: 40px 20px;
+    }
+    
+    .about-text-content,
+    .music-text-content {
+        gap: 20px;
+    }
+    
+    .hist, .hist2, .hist3,
+    .mus1, .mus2, .mus3 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Планшеты в портретной ориентации */
+@media (min-width: 769px) and (max-width: 992px) and (orientation: portrait) {
+    .home-section {
+        height: 90vh;
+    }
+    
+    .home-block {
+        margin-top: 120px;
+    }
+    
+    .about-container,
+    .music-container {
+        padding: 80px 30px;
     }
 }
